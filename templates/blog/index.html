@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load markup %}
 {% block title %}Welcome to my blog{% endblock %}
 
 {% block content %}
@@ -9,7 +10,7 @@
         <li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li><br />
 		<small>Created by {{ post.author }}</small><br />
 		<small>{{ post.posted }}</small>
-		<p>{{ post.body }}</p>
+		<p>{{ post.body|textile }}</p>
     {% endfor %}
     </ul>
 {% else %}
