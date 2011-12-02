@@ -35,7 +35,17 @@
 	<div id="main" class="wrapper">
 		<aside>
     <h3>Gelecek Etkinlik</h3>
-    <p>lorem ipsum falan filan</p>
+    {% if events %}
+    <ul>
+      {% for event in events %}
+      {{ event.title }}<br />
+      {{ event.end_date }}</br>
+      {{ event.location }}</br>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>Etkinlik yok</p>
+    {% endif %}
 		</aside>
 		<article>
 			<header>
