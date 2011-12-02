@@ -1,3 +1,28 @@
 {% extends "base.html" %}
+{% load markup %}
+{% block content %}
+
+<div class="container-fluid">
+
+{% if events %}
+<div class="span10">
+<ul>
+    {% for event in events %}
+        <li>{{ event.title }}</li><br />
+        <p>{{ event.description|textile }}</p><br />
+        <p>Nerede? <br />
+        {{ event.location }}
+        <p>Ne zaman? <br />
+        {{ event.start_date }}</p>
+    {% endfor %}
+</ul>
+</div>
+{% else %}
+    <p>Henüz bir etkinlik yok!</p>
+{% endif %}
+
+</div>
+
+{% endblock %}
 
 
