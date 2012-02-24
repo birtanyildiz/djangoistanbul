@@ -1,25 +1,2 @@
 {% extends "base.html" %}
-{% load markup %}
-
-{% block content %}
-
-<div class="container-fluid">
-
-    {% if team %}
-
-    <div class="span10">
-        <ul>
-            {% for teams in team %}
-                <li><strong>{{ teams.username }}</strong></li><br />
-                <p>{{ teams.bio|textile }}</p>
-            {% endfor %}
-        </ul>
-    </div>
-    {% else %}
-        <p>Ekipte kimse yok!</p>
-    {% endif %}
-
-</div>
-
-{% endblock %}
 

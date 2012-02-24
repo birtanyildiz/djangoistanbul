@@ -1,25 +1,2 @@
 {% extends "base.html" %}
-{% load markup %}
 
-{% block content %}
-
-<div class="container-fluid">
-
-    {% if posts %}
-    <div class="span10">
-        <ul>
-            {% for post in posts %}
-                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li><br />
-                <small>Created by {{ post.author }}</small><br />
-                <small>{{ post.posted }}</small>
-                <p>{{ post.body|textile }}</p>
-            {% endfor %}
-        </ul>
-    </div>
-    {% else %}
-        <p>There are no posts.</p>
-    {% endif %}
-
-</div>
-
-{% endblock %}
